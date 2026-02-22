@@ -1,0 +1,367 @@
+/* ========== NDA MODAL (POP-UP OVERLAY) ========== */
+.nda-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: overlayFade 0.4s ease;
+}
+
+.nda-card {
+  background: rgba(26, 26, 26, 0.95);
+  border: 1px solid rgba(80, 80, 80, 0.3);
+  border-radius: 18px;
+  padding: 40px 50px;
+  width: 650px;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05);
+  animation: popIn 0.35s ease;
+  overflow: hidden;
+}
+
+.nda-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.nda-subtext {
+  font-size: 0.95rem;
+  color: #a8a8a8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* the scrollable area that triggers “scroll to end” */
+.nda-scrollbox {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  color: #ddd;
+  padding: 18px;
+  border-radius: 10px;
+  overflow-y: auto;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 200px;
+  max-height: 50vh;
+  scroll-behavior: smooth;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nda-scrollbox::-webkit-scrollbar {
+  width: 6px;
+}
+.nda-scrollbox::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+/* this hint shows until user scrolls fully */
+.nda-scroll-hint {
+  color: #aaa;
+  font-size: 0.85rem;
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.nda-scroll-hint.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nda-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  user-select: none;
+}
+
+.nda-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.download-btn,
+.agree-btn,
+.cancel-btn {
+  background: linear-gradient(145deg, #202020, #181818);
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  min-width: 120px;
+}
+
+.download-btn:hover,
+.agree-btn:hover,
+.cancel-btn:hover {
+  background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.agree-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.nda-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ========== GLOBAL THEME ========== */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  font-family: "Inter", "Poppins", sans-serif;
+  height: 100%;
+}
+
+/* Disable background scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ========== LOGIN MODAL OVERLAY ========== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ========== LOGIN MODAL CARD ========== */
+.modal.login-modal {
+  background: #1a1a1a;
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-radius: 16px;
+  padding: 40px 50px;
+  width: 420px;
+  max-width: 90vw;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal.login-modal h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #f5f5f5;
+}
+
+.modal.login-modal .subtext {
+  font-size: 0.95rem;
+  color: #a8a8a8;
+  margin-bottom: 25px;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.modal.login-modal label {
+  display: block;
+  text-align: left;
+  width: 100%;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.modal.login-modal input {
+  width: 100%;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  color: #eee;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.modal.login-modal input:focus {
+  border-color: #666;
+  background: #181818;
+}
+
+.modal.login-modal input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal.login-modal input.invalid {
+  border-color: #b44;
+}
+
+/* ========== ERROR / HINT TEXT ========== */
+.error {
+  background: rgba(255, 60, 60, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  color: #ff7a7a;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.hint {
+  display: block;
+  font-size: 0.8rem;
+  color: #ff7676;
+  text-align: left;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+/* ========== BUTTONS ========== */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin: 0 6px;
+  background: linear-gradient(145deg, #202020, #181818);
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.modal-buttons button:hover {
+  background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.modal-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========== ACCESS LOG SECTION ========== */
+.access-log {
+  background: rgba(20, 20, 20, 0.7);
+  border-top: 1px solid #333;
+  margin-top: 25px;
+  padding-top: 10px;
+  width: 100%;
+  text-align: left;
+  font-family: monospace;
+}
+
+.access-log h4 {
+  font-size: 0.9rem;
+  color: #0ff;
+  margin-bottom: 8px;
+}
+
+.access-log ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.access-log li {
+  margin-bottom: 8px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* ========== NEON SECURITY BORDER ========== */
+.neon-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15),
+              0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+/* ========== PASSWORD STRENGTH BAR ========== */
+.strength-bar {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.strength-bar.weak {
+  color: #ff6b6b;
+}
+.strength-bar.medium {
+  color: #fcd34d;
+}
+.strength-bar.strong {
+  color: #4ade80;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

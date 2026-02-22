@@ -1,0 +1,26 @@
+[
+    {
+        "index": 1,
+        "filename": "stego_Gemini_Generated_Image_vv4fzovv4fzovv4f.png",
+        "timestamp": 1767382615.1798463,
+        "previous_hash": "GENESIS_HASH",
+        "hash": "053fc0821822df222cac54c7a577e962101a226d85e1255cca4b6086be817441",
+        "status": "Verified"
+    },
+    {
+        "index": 2,
+        "filename": "stego_Gemini_Generated_Image_ioe0i5ioe0i5ioe0.png",
+        "timestamp": 1767383190.4009671,
+        "previous_hash": "053fc0821822df222cac54c7a577e962101a226d85e1255cca4b6086be817441",
+        "hash": "ba66fa4679a3cbcab706dac000ff8b06ead9c38f35663f456b499edef4573558",
+        "status": "Verified"
+    },
+    {
+        "index": 3,
+        "filename": "stego_Gemini_Generated_Image_ioe0i5ioe0i5ioe0.png",
+        "timestamp": 1767383420.890079,
+        "previous_hash": "ba66fa4679a3cbcab706dac000ff8b06ead9c38f35663f456b499edef4573558",
+        "hash": "6119d24b8b28456f69f5a36e55aa78261adac02cb6f663fe4807e7cf1b28edcd",
+        "status": "Verified"
+    }
+]
