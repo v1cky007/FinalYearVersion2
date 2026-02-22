@@ -17,26 +17,26 @@ Make sure you have the following installed on your computer:
 Open a terminal and follow these steps to start the Python server:
 
 **1. Navigate to the backend folder:**
-\`\`\`bash
+```bash
 cd "Backend(Final_Year_project/backend"
-\`\`\`
+```
 
 **2. Create and activate a Python 3.11 Virtual Environment:**
 *For Windows:*
-\`\`\`powershell
+```powershell
 py -3.11 -m venv venv
 .\venv\Scripts\activate
-\`\`\`
+```
 *For Mac/Linux:*
-\`\`\`bash
+```bash
 python3.11 -m venv venv
 source venv/bin/activate
-\`\`\`
+```
 
 **3. Set up the requirements file:**
 Create a file named `requirements.txt` in your `backend` folder and paste the following code exactly as is:
 
-\`\`\`text
+```text
 # ==========================================
 # Web Framework & Server
 # ==========================================
@@ -53,7 +53,7 @@ keras==3.13.0
 scikit-learn==1.4.1.post1
 h5py==3.15.1
 spacy==3.8.11
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+[https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl)
 
 # ==========================================
 # Blockchain & Cryptography
@@ -75,18 +75,18 @@ bitarray==3.8.0
 # Database
 # ==========================================
 SQLAlchemy==2.0.45
-\`\`\`
+```
 
 **4. Install the required libraries:**
 Run this command to download and install all the dependencies from the file you just created:
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 **5. Start the backend server:**
-\`\`\`bash
+```bash
 uvicorn main:app --reload
-\`\`\`
+```
 > ✅ The backend will now be running at: `http://127.0.0.1:8000`
 
 ---
@@ -96,19 +96,19 @@ uvicorn main:app --reload
 Open a **new, second terminal window** (leave the backend running in the first one) and follow these steps:
 
 **1. Navigate to the frontend folder:**
-\`\`\`bash
+```bash
 cd "Frontend(Final_Project)/myreactapp"
-\`\`\`
+```
 
 **2. Install the required Node modules:**
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 **3. Start the React development server:**
-\`\`\`bash
+```bash
 npm start
-\`\`\`
+```
 > ✅ The frontend will automatically open in your browser at: `http://localhost:3000`
 
 ---
